@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "955c49d7-fa51-4a17-a32f-a7ff371656e9",
+		"name": "REEINVENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Authenticate with WRITER parameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/authenticate?username=writer_person@example.com&password=test123!&scope=writer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"authenticate"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "writer_person@example.com"
+								},
+								{
+									"key": "password",
+									"value": "test123!"
+								},
+								{
+									"key": "scope",
+									"value": "writer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate with READER parameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/authenticate?username=reader_person@example.com&password=test123!&scope=reader",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"authenticate"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "reader_person@example.com"
+								},
+								{
+									"key": "password",
+									"value": "test123!"
+								},
+								{
+									"key": "scope",
+									"value": "reader"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Synonyms",
+			"item": [
+				{
+					"name": "GET WORDS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/synonym/get/stan",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"get",
+								"stan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE WORD",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/synonym/delete/stan",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"delete",
+								"stan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT WORD",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/synonym/edit/stancic?newWord=stan",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"edit",
+								"stancic"
+							],
+							"query": [
+								{
+									"key": "newWord",
+									"value": "stan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ASSIGN WORDS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/synonym/assign/stan/kuca",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"assign",
+								"stan",
+								"kuca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEASSIGN WORDS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/synonym/deassign/stan/kuca",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"deassign",
+								"stan",
+								"kuca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD WORDS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"word1\": \"kuca\",\r\n  \"word2\": [\"stan\", \"apartman\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/synonym/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"synonym",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
